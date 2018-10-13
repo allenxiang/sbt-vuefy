@@ -3,12 +3,11 @@ sbt-vuefy
 
 [![CircleCI](https://circleci.com/gh/GIVESocialMovement/sbt-vuefy/tree/master.svg?style=shield)](https://circleci.com/gh/GIVESocialMovement/sbt-vuefy/tree/master)
 [![codecov](https://codecov.io/gh/GIVESocialMovement/sbt-vuefy/branch/master/graph/badge.svg)](https://codecov.io/gh/GIVESocialMovement/sbt-vuefy)
+[![Gitter chat](https://badges.gitter.im/GIVE-asia/gitter.png)](https://gitter.im/GIVE-asia/Lobby)
 
 sbt-vuefy integrates Vue's single components into Playframework. It hot-reloads the changes of Vue components while running Playframework with `sbt run`. It also works with `sbt stage`, which triggers the production build.
 
-Please see the example project in the folder `test-play-project`.
-
-Also, see our blog post for some more detail: https://give.engineering/2018/06/05/vue-js-with-playframework.html
+Please see the example project in the folder `test-play-project`. Also, see our blog post for some more detail: https://give.engineering/2018/06/05/vue-js-with-playframework.html
 
 This plugin is currently used at [GIVE.asia](https://give.asia).
 
@@ -30,7 +29,7 @@ Add the below line to `project/plugins.sbt`:
 ```
 resolvers += Resolver.bintrayRepo("givers", "maven")
 
-addSbtPlugin("givers.vuefy" % "sbt-vuefy" % "1.2.0")
+addSbtPlugin("givers.vuefy" % "sbt-vuefy" % "1.3.0")
 ```
 
 
@@ -130,5 +129,5 @@ The project welcomes any contribution. Here are the steps for testing when devel
 Future improvement
 --------------------
 
-* `VueKeys.prodCommands` is hacky. There must be a better way of implementing the production build setting.
-* Currently, the plugin doesn't track CSS dependencies (e.g. using `@import`) because webpack/vue-loader doesn't track these dependencies. We need to find a way.
+* Currently, the plugin doesn't track CSS dependencies (e.g. using `@import`) because webpack/vue-loader doesn't track these dependencies. We need to find a way. See the ongoing issue: https://github.com/GIVESocialMovement/sbt-vuefy/issues/20
+* `VueKeys.prodCommands` is hacky. I use this approach because I don't have good understanding in SBT's scoping. There must be a better way of implementing the production build setting.
